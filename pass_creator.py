@@ -13,7 +13,6 @@ def random_letter():
         return chr(letter)
     else :
         return chr(letter).lower()
-    return chr(letter)
 
 
 def random_number():
