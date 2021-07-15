@@ -37,6 +37,5 @@ def hash_it(pw_to_hash):
     return first5_char, tail
 
 
-
 if __name__ == "__main__":
     print('run main.py')

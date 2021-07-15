@@ -36,7 +36,7 @@ def what_to_choose(pw):
             return random_symbol()
 
 
-def make_password(pw_len):
+def make_password(pw_len=12):
     new_pass = ''
 
     for letter in range(pw_len):
@@ -44,4 +44,8 @@ def make_password(pw_len):
         new_pass = new_pass + digit
 
     return new_pass
+
+
+if __name__ == '__main__':
+    print(make_password())
 
