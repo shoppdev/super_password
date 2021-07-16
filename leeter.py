@@ -7,7 +7,7 @@ def convert_to_ascii(letter):
 
 
 def letter_converter(letter):
-    letter_list = ['a', 'e', 'o', 's']
+    letter_list = ['a', 'e', 'h', 'o', 's', 'x']
     # chance to upper or lower
     if random.randint(0, 1) == 1:
         letter = letter.upper()
@@ -24,7 +24,15 @@ def letter_converter(letter):
                 letter = '$'
             elif letter.lower() == 'o':
                 letter = '0'
+            elif letter.lower() == 'x':
+                letter = '+'
+            elif letter.lower() == 'h':
+                letter = '4'
     return letter
+
+
+def number_converter(letter):
+    pass
 
 
 def leet_it(word):
@@ -37,16 +45,19 @@ def leet_it(word):
             leeted = leeted + letter_converter(letter)
         elif 48 <= ascii_letter <= 57:
             leeted = leeted + letter
+        else:
+            leeted = leeted + letter
     return leeted
 
 
+# might change to make usable gibberish
 def bookend(word):
     end = ''
     end = pass_creator.random_symbol() + end
     end = pass_creator.random_number() + end
     end = pass_creator.random_letter() + end
-    return end + word # + end[::-1]
+    return end[0] + word # + end[1:3]
 
 
 if __name__ == '__main__':
-    print(bookend(leet_it('ashton1')))
+    print(bookend(leet_it('NaxMaster@49')))

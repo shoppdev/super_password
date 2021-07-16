@@ -8,6 +8,7 @@ Have I Been Pwnd API module added
  TODO:
  -Add more symbols in pass_creator module
 
- -Check created passwords against pwnd api
 
  -Give password and will modify it to make it safer to use, also verify on pwnd
+  - check length
+  -what is a recognizable pw?
