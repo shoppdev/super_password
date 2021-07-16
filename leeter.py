@@ -3,19 +3,18 @@
 def check_letter(letter):
     ascii_num = int(ord(letter))
 
-    if ascii_num >=65 and ascii_num <=95:
+    if 65 <= ascii_num <= 95:
         print('big letter')
-    elif ascii_num >= 97 and ascii_num <=122:
+    elif 97 <= ascii_num <= 122:
         print('little letter')
-    elif ascii_num >=48 and ascii_num <=57 :
+    elif 48 <= ascii_num <= 57:
         print('number')
     else:
         print('symbol')
 
-
     # get letter
     # get ascii code
-    #print(ord(letter))
+    # print(ord(letter))
     # modify letter based on ascii
 
 
