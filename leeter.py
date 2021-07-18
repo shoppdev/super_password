@@ -9,13 +9,20 @@ def convert_to_ascii(letter):
     return int(ord(letter))
 
 
-def make_longer():
+def make_longer(word):
+    # will make the password longer somehow
+    pass
+
+
+def varify_pass(word):
+    # Varify that the password is long enough dosent have repeating chars, etc
     pass
 
 
 def length_checker(word):
     if len(word) < 8:
         print('!! Your password is less than the recommended min length. !!')
+        make_longer(word)
 
 
 def letter_converter(letter):
