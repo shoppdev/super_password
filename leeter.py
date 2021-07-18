@@ -1,9 +1,21 @@
 import random
+import pwnd_check
+import sys
+
 import pass_creator
 
 
 def convert_to_ascii(letter):
     return int(ord(letter))
+
+
+def make_longer():
+    pass
+
+
+def length_checker(word):
+    if len(word) < 8:
+        print('!! Your password is less than the recommended min length. !!')
 
 
 def letter_converter(letter):
@@ -22,12 +34,12 @@ def letter_converter(letter):
                 letter = '3'
             elif letter.lower() == 's':
                 letter = '$'
-            elif letter.lower() == 'o':
-                letter = '0'
             elif letter.lower() == 'x':
                 letter = '+'
             elif letter.lower() == 'h':
                 letter = '4'
+        if letter.lower() == 'o':
+            letter = '0'
     return letter
 
 
@@ -56,8 +68,16 @@ def bookend(word):
     end = pass_creator.random_symbol() + end
     end = pass_creator.random_number() + end
     end = pass_creator.random_letter() + end
-    return end[0] + word # + end[1:3]
+    return end[0] + word  # + end[1:3]
 
 
 if __name__ == '__main__':
-    print(bookend(leet_it('NaxMaster@49')))
+
+    user_input = sys.argv[1]
+    length_checker(user_input)
+    word = leet_it(user_input)
+    b_word = bookend(word)
+
+    print(f'New pass = {user_input} found {pwnd_check.check_password(user_input)}')
+    print(f'New pass = {word} found {pwnd_check.check_password(word)}')
+    print(f'With ends = {b_word} found {pwnd_check.check_password(b_word)}')
