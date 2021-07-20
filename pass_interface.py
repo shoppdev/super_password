@@ -2,6 +2,7 @@
 from tkinter import *
 
 from tkinter.ttk import *  # gives a modern look to the gui
+import pass_creator
 
 # root = Tk()
 #
@@ -13,11 +14,20 @@ from tkinter.ttk import *  # gives a modern look to the gui
 #
 # root.mainloop()
 
+def get_pw():
+    label = Label(text=f'random pw- {pass_creator.make_password(12)}').pack()
+    #label.pack()
 
 def start_gui():
     gui = Tk()
     gui.title('Super Password!')
     gui.geometry('270x150')
+
+    button = Button(gui, text='Gen. Pass', command=get_pw)
+    #label = Label(gui, text=f'random pw- {pass_creator.make_password(12)}')
+    button.pack()
+    #label.pack()
+
 
     gui.mainloop()
 
