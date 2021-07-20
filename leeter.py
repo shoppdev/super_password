@@ -40,9 +40,9 @@ def letter_converter(letter):
             elif letter.lower() == 'e':
                 letter = '3'
             elif letter.lower() == 's':
-                letter = '$'
+                letter = random.choice(['$', '5'])
             elif letter.lower() == 'x':
-                letter = '+'
+                letter = '*'
             elif letter.lower() == 'h':
                 letter = '4'
         if letter.lower() == 'o':
@@ -55,6 +55,7 @@ def number_converter(letter):
 
 
 def leet_it(word):
+    word_lenght = len(word)/2
     leeted = ''
     for letter in word:
         ascii_letter = convert_to_ascii(letter)
@@ -66,6 +67,7 @@ def leet_it(word):
             leeted = leeted + letter
         else:
             leeted = leeted + letter
+    leeted = bookend(leeted)
     return leeted
 
 
@@ -75,16 +77,11 @@ def bookend(word):
     end = pass_creator.random_symbol() + end
     end = pass_creator.random_number() + end
     end = pass_creator.random_letter() + end
-    return end[0] + word  # + end[1:3]
+    return end[0] + word + end[1:3]
 
 
 if __name__ == '__main__':
 
+    print("This is for testing, you probably meant to run main.py")
     user_input = sys.argv[1]
-    length_checker(user_input)
-    word = leet_it(user_input)
-    b_word = bookend(word)
-
-    print(f'New pass = {user_input} found {pwnd_check.check_password(user_input)}')
-    print(f'New pass = {word} found {pwnd_check.check_password(word)}')
-    print(f'With ends = {b_word} found {pwnd_check.check_password(b_word)}')
+    print(leet_it(user_input))
