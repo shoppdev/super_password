@@ -1,5 +1,4 @@
 import random
-import pwnd_check
 import sys
 
 import pass_creator
@@ -9,20 +8,9 @@ def convert_to_ascii(letter):
     return int(ord(letter))
 
 
-def make_longer(word):
-    # will make the password longer somehow
-    pass
-
-
-def varify_pass(word):
-    # Varify that the password is long enough dosent have repeating chars, etc
-    pass
-
-
 def length_checker(word):
     if len(word) < 8:
         print('!! Your password is less than the recommended min length. !!')
-        make_longer(word)
 
 
 def letter_converter(letter):
@@ -48,10 +36,6 @@ def letter_converter(letter):
         if letter.lower() == 'o':
             letter = '0'
     return letter
-
-
-def number_converter(letter):
-    pass
 
 
 def leet_it(word):
