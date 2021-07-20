@@ -20,7 +20,9 @@ def random_number():
 
 
 def random_symbol():
-    return chr(random.randint(33, 46))
+    # build a list of useable symbols than random choice use
+    return random.choice(['@', '%', '+', '/', '\\', '\'', '!', '#', '$', '^', '?', ':', ',',
+                          '(', ')', '{', '}', '[', ']', '~', '-', '_', '.'])
 
 
 def what_to_choose(pw):
