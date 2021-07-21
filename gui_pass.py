@@ -4,29 +4,42 @@ from tkinter import *
 
 from tkinter.ttk import *  # gives a modern look to the gui
 import pass_creator
+import pwnd_check
 
 ''' four buttons on open (password gen, password check, password change, close '''
 
 
-def get_pw():
-    #label = Label(text=f'random pw- {pass_creator.make_password(12)}').pack()
-    box = Text(height=1, width=52)
+def get_pw(window):
+
+    box = Text(window, height=1, width=52)
     box.insert(INSERT, pass_creator.make_password(12))
     box.pack()
-    value = box.get('1.0', 'end-1c')
-    print(value)
+
 
 def gen_password():
     gen = Tk()
     gen.title('Generate Password')
     gen.geometry('270x150')
-    button = Button(gen, text='Generate')
+    button = Button(gen, text='Generate', command=lambda: get_pw(gen))
     close = Button(gen, text='Close', command=gen.destroy)
 
     button.pack()
     close.pack()
 
 
+def display_text():
+    pass
+
+
+def check_password():
+    pwn = Tk()
+    pwn.title('PWND Check')
+    pwn.geometry('270x150')
+    check = Button(pwn, text='Check')
+    close = Button(pwn, text='Close', command=pwn.destroy)
+
+    check.pack()
+    close.pack()
 
 
 def start_gui():
@@ -35,7 +48,7 @@ def start_gui():
     gui.geometry('270x150')
 
     gen_pass = Button(gui, text='Gen. Pass', command=gen_password)
-    check_pass = Button(gui, text='Check Pass')
+    check_pass = Button(gui, text='Check Pass', command=check_password)
     leet_pass = Button(gui, text='Leet Pass')
     close_btn = Button(gui, text='Close', command=gui.destroy)
 
