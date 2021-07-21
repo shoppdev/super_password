@@ -95,4 +95,4 @@ def start_gui():
 
     gui.mainloop()
 
-start_gui()
+#start_gui()
